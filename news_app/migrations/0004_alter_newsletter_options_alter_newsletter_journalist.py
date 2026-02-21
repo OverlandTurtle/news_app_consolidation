@@ -8,17 +8,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('news_app', '0003_newsletter'),
+        ("news_app", "0003_newsletter"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='newsletter',
-            options={'ordering': ['-created_at']},
+            name="newsletter",
+            options={"ordering": ["-created_at"]},
         ),
         migrations.AlterField(
-            model_name='newsletter',
-            name='journalist',
-            field=models.ForeignKey(limit_choices_to={'role': 'journalist'}, on_delete=django.db.models.deletion.CASCADE, related_name='newsletters', to=settings.AUTH_USER_MODEL),
+            model_name="newsletter",
+            name="journalist",
+            field=models.ForeignKey(
+                limit_choices_to={"role": "journalist"},
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="newsletters",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

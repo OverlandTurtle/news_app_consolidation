@@ -16,30 +16,32 @@ class Command(BaseCommand):
         article_ct = ContentType.objects.get_for_model(Article)
 
         def get_perm(codename: str) -> Permission:
-            return Permission.objects.get(
-                content_type=article_ct, codename=codename
-            )
+            return Permission.objects.get(content_type=article_ct, codename=codename)
 
         # Reader: view only
-        readers_group.permissions.set([
-            get_perm("view_article"),
-        ])
+        readers_group.permissions.set(
+            [
+                get_perm("view_article"),
+            ]
+        )
 
         # Editor: view, update, delete
-        editors_group.permissions.set([
-            get_perm("view_article"),
-            get_perm("change_article"),
-            get_perm("delete_article"),
-        ])
+        editors_group.permissions.set(
+            [
+                get_perm("view_article"),
+                get_perm("change_article"),
+                get_perm("delete_article"),
+            ]
+        )
 
         # Journalist: create, view, update, delete
-        journalists_group.permissions.set([
-            get_perm("add_article"),
-            get_perm("view_article"),
-            get_perm("change_article"),
-            get_perm("delete_article"),
-        ])
-
-        self.stdout.write(
-            self.style.SUCCESS("Groups + permissions are set up.")
+        journalists_group.permissions.set(
+            [
+                get_perm("add_article"),
+                get_perm("view_article"),
+                get_perm("change_article"),
+                get_perm("delete_article"),
+            ]
         )
+
+        self.stdout.write(self.style.SUCCESS("Groups + permissions are set up."))

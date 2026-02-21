@@ -65,9 +65,7 @@ class ArticleForm(forms.ModelForm):
         # Basic validation
         title = self.cleaned_data.get("title", "").strip()
         if len(title) < 5:
-            raise forms.ValidationError(
-                "Title must be at least 5 characters long."
-            )
+            raise forms.ValidationError("Title must be at least 5 characters long.")
 
         return title
 
@@ -75,9 +73,7 @@ class ArticleForm(forms.ModelForm):
         # Basic validation
         body = self.cleaned_data.get("body", "").strip()
         if len(body) < 20:
-            raise forms.ValidationError(
-                "Body must be at least 20 characters long."
-            )
+            raise forms.ValidationError("Body must be at least 20 characters long.")
 
         return body
 
@@ -88,6 +84,7 @@ class PublisherForm(forms.ModelForm):
     - name required
     - website optional
     """
+
     class Meta:
         model = Publisher
         fields = ["name", "website"]

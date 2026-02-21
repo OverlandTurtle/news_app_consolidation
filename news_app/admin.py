@@ -28,8 +28,6 @@ class PublisherAdmin(admin.ModelAdmin):
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = (
-        "title", "publisher", "journalist", "is_approved", "created_at"
-    )
+    list_display = ("title", "publisher", "journalist", "is_approved", "created_at")
     list_filter = ("is_approved", "publisher", "created_at")
     search_fields = ("title", "summary", "body", "journalist__username")

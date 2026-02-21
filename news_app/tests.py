@@ -56,8 +56,7 @@ class ApiTests(TestCase):
             journalist=self.journalist1,
             title="Article A1 Title",
             summary="A1 summary",
-            body="A1 body text that is definitely"
-            "long enough for the test purposes.",
+            body="A1 body text that is definitely" "long enough for the test purposes.",
             is_approved=True,
         )
 

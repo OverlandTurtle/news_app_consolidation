@@ -7,13 +7,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('news_app', '0001_initial'),
+        ("news_app", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='article',
-            name='publisher',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='articles', to='news_app.publisher'),
+            model_name="article",
+            name="publisher",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="articles",
+                to="news_app.publisher",
+            ),
         ),
     ]

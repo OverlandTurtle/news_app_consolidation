@@ -24,23 +24,17 @@ def my_feed(request):
         )
 
     # Get subscription IDs, safe even if empty
-    publisher_ids = request.user.subscribed_publishers.values_list(
-        "id", flat=True
-    )
+    publisher_ids = request.user.subscribed_publishers.values_list("id", flat=True)
 
-    journalist_ids = request.user.subscribed_journalists.values_list(
-        "id", flat=True
-    )
+    journalist_ids = request.user.subscribed_journalists.values_list("id", flat=True)
 
     # Build: approved AND, publisher in subs OR journalist in subs.
     # If both subscription lists are empty, return an empty list.
-    articles_qs = Article.objects.filter(
-        is_approved=True).order_by("-created_at")
+    articles_qs = Article.objects.filter(is_approved=True).order_by("-created_at")
 
     if publisher_ids or journalist_ids:
         articles_qs = articles_qs.filter(
-            Q(publisher_id__in=publisher_ids) | Q(
-                journalist_id__in=journalist_ids)
+            Q(publisher_id__in=publisher_ids) | Q(journalist_id__in=journalist_ids)
         ).distinct()
 
     else:
@@ -75,11 +69,9 @@ def article_detail_api(request, article_id):
             status=403,
         )
 
-    publisher_ids = request.user.subscribed_publishers.values_list(
-        "id", flat=True)
+    publisher_ids = request.user.subscribed_publishers.values_list("id", flat=True)
 
-    journalist_ids = request.user.subscribed_journalists.values_list(
-        "id", flat=True)
+    journalist_ids = request.user.subscribed_journalists.values_list("id", flat=True)
 
     # Only approved articles can be fetched via the API
     qs = Article.objects.filter(is_approved=True)

@@ -8,21 +8,45 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('news_app', '0002_alter_article_publisher'),
+        ("news_app", "0002_alter_article_publisher"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Newsletter',
+            name="Newsletter",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200)),
-                ('body', models.TextField()),
-                ('is_approved', models.BooleanField(default=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('journalist', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='newsletters', to=settings.AUTH_USER_MODEL)),
-                ('publisher', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='newsletters', to='news_app.publisher')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=200)),
+                ("body", models.TextField()),
+                ("is_approved", models.BooleanField(default=False)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "journalist",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="newsletters",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "publisher",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="newsletters",
+                        to="news_app.publisher",
+                    ),
+                ),
             ],
         ),
     ]

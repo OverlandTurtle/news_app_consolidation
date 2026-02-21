@@ -25,8 +25,9 @@ def user_is_reader(user):
     """
     Role check.
     """
-    return user.is_authenticated and getattr(
-        user, "role", None) == CustomUser.ROLE_READER
+    return (
+        user.is_authenticated and getattr(user, "role", None) == CustomUser.ROLE_READER
+    )
 
 
 def editor_can_manage_publisher_item(editor_user, publisher):
@@ -70,9 +71,7 @@ def register_view(request):
             user.groups.clear()
             user.groups.add(group)
 
-            messages.success(
-                request, "Account created successfully. Please log in."
-            )
+            messages.success(request, "Account created successfully. Please log in.")
 
             return redirect("news_app:login")
 
@@ -166,8 +165,9 @@ def journalist_list(request):
     Reader list of all journalist users.
     Filter CustomUser by role to only show journalists.
     """
-    journalists = CustomUser.objects.filter(
-        role=CustomUser.ROLE_JOURNALIST).order_by("username")
+    journalists = CustomUser.objects.filter(role=CustomUser.ROLE_JOURNALIST).order_by(
+        "username"
+    )
 
     return render(
         request,
@@ -202,9 +202,7 @@ def publisher_subscribe(request, publisher_id):
 @require_http_methods(["POST"])
 def publisher_unsubscribe(request, publisher_id):
     if not user_is_reader(request.user):
-        messages.error(
-            request, "Only Readers can unsubscribe from publishers."
-        )
+        messages.error(request, "Only Readers can unsubscribe from publishers.")
 
         return redirect("news_app:publisher_list")
 
@@ -233,9 +231,7 @@ def journalist_subscribe(request, journalist_id):
     )
 
     if journalist in request.user.subscribed_journalists.all():
-        messages.info(
-            request, "You are already subscribed to that journalist."
-        )
+        messages.info(request, "You are already subscribed to that journalist.")
 
         return redirect("news_app:journalist_list")
 
@@ -248,9 +244,7 @@ def journalist_subscribe(request, journalist_id):
 @require_http_methods(["POST"])
 def journalist_unsubscribe(request, journalist_id):
     if not user_is_reader(request.user):
-        messages.error(
-            request, "Only Readers can unsubscribe from journalists."
-        )
+        messages.error(request, "Only Readers can unsubscribe from journalists.")
 
         return redirect("news_app:journalist_list")
 
@@ -347,8 +341,7 @@ def my_articles(request):
 
         return redirect("news_app:dashboard")
 
-    articles = Article.objects.filter(
-        journalist=request.user).order_by("-created_at")
+    articles = Article.objects.filter(journalist=request.user).order_by("-created_at")
 
     return render(
         request,
@@ -379,9 +372,7 @@ def article_create(request):
             article.is_approved = False
 
             article.save()
-            messages.success(
-                request, "Article draft created. It is not approved yet."
-            )
+            messages.success(request, "Article draft created. It is not approved yet.")
 
             return redirect("news_app:my_articles")
 
@@ -389,9 +380,7 @@ def article_create(request):
     else:
         form = ArticleForm()
 
-    return render(
-        request, "news_app/journalists/article_form.html", {"form": form}
-    )
+    return render(request, "news_app/journalists/article_form.html", {"form": form})
 
 
 @login_required
@@ -406,9 +395,7 @@ def article_edit(request, article_id):
         messages.error(request, "Only journalists can edit their articles.")
         return redirect("news_app:dashboard")
 
-    article = get_object_or_404(
-        Article, id=article_id, journalist=request.user
-    )
+    article = get_object_or_404(Article, id=article_id, journalist=request.user)
 
     if article.is_approved:
         messages.error(
@@ -453,9 +440,7 @@ def article_delete(request, article_id):
 
         return redirect("news_app:dashboard")
 
-    article = get_object_or_404(
-        Article, id=article_id, journalist=request.user
-    )
+    article = get_object_or_404(Article, id=article_id, journalist=request.user)
 
     if article.is_approved:
         messages.error(
@@ -478,19 +463,17 @@ def editor_pending_articles(request):
     Shows all articles that are not approved yet.
     """
     if request.user.role != CustomUser.ROLE_EDITOR:
-        messages.error(
-            request, "Only editors can access the editor dashboard."
-        )
+        messages.error(request, "Only editors can access the editor dashboard.")
 
         return redirect("news_app:dashboard")
 
-    pending_articles = Article.objects.filter(
-        is_approved=False).order_by("-created_at")
+    pending_articles = Article.objects.filter(is_approved=False).order_by("-created_at")
     # Editors can approve:
     # independent articles (publisher is NULL)
     # publisher-linked articles, only if they are assigned to that publisher
     allowed_publisher_ids = request.user.publishers_as_editor.values_list(
-        "id", flat=True)
+        "id", flat=True
+    )
 
     pending_articles = pending_articles.filter(
         models.Q(publisher__isnull=True)
@@ -542,11 +525,9 @@ def editor_approve_article(request, article_id):
 
     publisher_subs = subscriber_qs.none()
     if article.publisher:
-        publisher_subs = subscriber_qs.filter(
-            subscribed_publishers=article.publisher)
+        publisher_subs = subscriber_qs.filter(subscribed_publishers=article.publisher)
 
-    journalist_subs = subscriber_qs.filter(
-        subscribed_journalists=article.journalist)
+    journalist_subs = subscriber_qs.filter(subscribed_journalists=article.journalist)
 
     subscribers = (publisher_subs | journalist_subs).distinct()
 
@@ -642,9 +623,9 @@ def editor_pending_newsletters(request):
         messages.error(request, "Only editors can access the editor dashboard.")
         return redirect("news_app:dashboard")
 
-    pending_newsletters = Newsletter.objects.filter(
-        is_approved=False
-    ).order_by("-created_at")
+    pending_newsletters = Newsletter.objects.filter(is_approved=False).order_by(
+        "-created_at"
+    )
 
     allowed_publisher_ids = request.user.publishers_as_editor.values_list(
         "id", flat=True
@@ -685,8 +666,7 @@ def editor_approve_newsletter(request, newsletter_id):
         is_assigned = newsletter.publisher.editors.filter(id=request.user.id).exists()
         if not is_assigned:
             messages.error(
-                request,
-                "You cannot approve newsletters for this publisher."
+                request, "You cannot approve newsletters for this publisher."
             )
 
             return redirect("news_app:editor_pending_newsletters")
@@ -795,9 +775,9 @@ def my_newsletters(request):
         messages.error(request, "Only journalists can access My Newsletters.")
         return redirect("news_app:dashboard")
 
-    newsletters = Newsletter.objects.filter(
-        journalist=request.user
-    ).order_by("-created_at")
+    newsletters = Newsletter.objects.filter(journalist=request.user).order_by(
+        "-created_at"
+    )
 
     return render(
         request,
@@ -932,9 +912,7 @@ def newsletter_list(request):
 
 
 def newsletter_detail(request, newsletter_id):
-    newsletter = get_object_or_404(
-        Newsletter, id=newsletter_id, is_approved=True
-    )
+    newsletter = get_object_or_404(Newsletter, id=newsletter_id, is_approved=True)
     return render(
         request,
         "news_app/newsletters/newsletter_detail.html",
@@ -956,10 +934,14 @@ def editor_articles(request):
         "id", flat=True
     )
 
-    articles = Article.objects.filter(
-        models.Q(publisher__isnull=True)
-        | models.Q(publisher_id__in=allowed_publisher_ids)
-    ).distinct().order_by("-created_at")
+    articles = (
+        Article.objects.filter(
+            models.Q(publisher__isnull=True)
+            | models.Q(publisher_id__in=allowed_publisher_ids)
+        )
+        .distinct()
+        .order_by("-created_at")
+    )
 
     return render(
         request,
@@ -1049,10 +1031,14 @@ def editor_newsletters(request):
         "id", flat=True
     )
 
-    newsletters = Newsletter.objects.filter(
-        models.Q(publisher__isnull=True)
-        | models.Q(publisher_id__in=allowed_publisher_ids)
-    ).distinct().order_by("-created_at")
+    newsletters = (
+        Newsletter.objects.filter(
+            models.Q(publisher__isnull=True)
+            | models.Q(publisher_id__in=allowed_publisher_ids)
+        )
+        .distinct()
+        .order_by("-created_at")
+    )
 
     return render(
         request,
