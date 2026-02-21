@@ -1,4 +1,4 @@
-# News App Capstone
+# News App Capstone (Consolidation)
 
 A simple Django news platform with three roles:
 
@@ -10,29 +10,46 @@ On approval, the app emails subscribers and attempts to post to X (Twitter) if c
 
 ---
 
-## Quick start
+## What’s in this repo (capstone requirements)
 
-## Run locally
+- **Branch workflow**: work was done on `docs` (Sphinx) and `container` (Docker), then merged into `main`.
+- **Sphinx documentation** lives in `docs/` and builds to `docs/build/html/`.
+- **Docker** support via `Dockerfile` + `docker-compose.yml` (Django + MariaDB).
+
+---
+
+## Quick start (run locally)
+
+### 1) Create + activate venv, install deps
 
 ```bash
 # from the project root (where manage.py is)
 python -m venv venv
 source venv/bin/activate
 python -m pip install -r requirements.txt
-
-python manage.py migrate
-python manage.py setup_roles
-python manage.py createsuperuser
-python manage.py runserver
 ```
 
-Open:
-- App: `http://127.0.0.1:8000/`
-- Admin: `http://127.0.0.1:8000/admin/`
+### 2) Create a local `.env` (NOT committed)
 
----
+Create a file called `.env` in the project root.
 
-## MariaDB setup (fresh DB)
+Minimum example:
+
+```env
+DJANGO_SECRET_KEY=change-me
+DJANGO_DEBUG=1
+DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
+
+DB_NAME=news_capstone_db
+DB_USER=news_capstone_user
+DB_PASSWORD=your_password_here
+DB_HOST=127.0.0.1
+DB_PORT=3306
+```
+
+A safe placeholder file is provided as `.env.example`.
+
+### 3) MariaDB setup (fresh DB)
 
 Start MariaDB:
 
@@ -40,7 +57,7 @@ Start MariaDB:
 brew services start mariadb
 ```
 
-Create DB/user:
+Create DB/user (one-time):
 
 ```bash
 mysql -u root -p
@@ -54,20 +71,88 @@ FLUSH PRIVILEGES;
 EXIT;
 ```
 
-Update `news_capstone/settings.py`:
+### 4) Migrate + create roles + run server
 
-```python
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "news_capstone_db",
-        "USER": "news_capstone_user",
-        "PASSWORD": "YOUR_PASSWORD_HERE",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
-        "OPTIONS": {"charset": "utf8mb4"},
-    }
-}
+```bash
+python manage.py migrate
+python manage.py setup_roles
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+Open:
+
+- App: `http://127.0.0.1:8000/`
+- Admin: `http://127.0.0.1:8000/admin/`
+
+---
+
+## Sphinx documentation
+
+Build the docs (from project root):
+
+```bash
+cd docs && make html
+```
+
+Output:
+
+- `docs/build/html/index.html`
+
+---
+
+## Docker (Django + MariaDB using Docker Compose)
+
+### 1) Create `.env.docker` (local-only, NOT committed)
+
+Create a file named `.env.docker` in the project root:
+
+```env
+# Django
+DJANGO_SECRET_KEY=dev-only-secret-key-change-me
+DJANGO_DEBUG=1
+DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+
+# Database (points Django to the *db* service inside compose)
+DB_NAME=news_capstone_db
+DB_USER=news_capstone_user
+DB_PASSWORD=password123
+DB_HOST=db
+DB_PORT=3306
+```
+
+### 2) Build + run
+
+```bash
+docker compose up --build
+```
+
+In another terminal (first time / after schema changes), run migrations:
+
+```bash
+docker compose run --rm web python manage.py migrate
+```
+
+Optional: create a superuser inside the container:
+
+```bash
+docker compose run --rm web python manage.py createsuperuser
+```
+
+Then visit:
+
+- `http://127.0.0.1:8000/`
+
+Stop containers:
+
+```bash
+docker compose down
+```
+
+Reset DB volume (fresh start):
+
+```bash
+docker compose down -v
 ```
 
 ---
@@ -80,19 +165,21 @@ Run once after migrations:
 python manage.py setup_roles
 ```
 
-- **Reader**: view articles
-- **Editor**: view/change/delete articles
-- **Journalist**: add/view/change/delete articles
+- **Reader**: view approved articles/newsletters (with subscription rules)
+- **Editor**: approve/manage content
+- **Journalist**: create/manage drafts
 
 ---
 
 ## Email + X posting on approval
 
-When an editor approves an article:
+When an editor approves an article/newsletter:
+
 - Email is sent to subscribed Readers (publisher + journalist subscriptions)
 - X posting is attempted only if env vars exist:
   - `X_BEARER_TOKEN`
   - `X_POST_URL`
+
 If missing, posting is skipped (approval still succeeds).
 
 ---
@@ -116,58 +203,21 @@ curl -i -u USERNAME:PASSWORD http://127.0.0.1:8000/api/articles/ID/
 ## Tests
 
 ```bash
-python manage.py test news_app
+python manage.py test
 ```
 
 ---
 
-## Newsletters
+## Style (Black + flake8)
 
-Newsletters follow the same basic workflow as articles:
+Format:
 
-- **Readers** can browse approved newsletters.
-- **Journalists** can create and manage their own newsletter drafts.
-- **Editors** can approve pending newsletters.
+```bash
+black .
+```
 
-Useful pages:
-
-- Reader list: `http://127.0.0.1:8000/newsletters/`
-- Reader detail: `http://127.0.0.1:8000/newsletters/<id>/`
-- Journalist drafts: `http://127.0.0.1:8000/my-newsletters/`
-- Editor pending: `http://127.0.0.1:8000/editor/newsletters/pending/`
-
-Notes:
-- Newsletters can be **independent** (no publisher) or linked to a publisher.
-- Approval rules match articles:
-  - Independent items: any editor can approve
-  - Publisher-linked items: only editors assigned to that publisher can approve
-
----
-
-## Editors can create publishers (UI)
-
-Editors can add new publishers from the normal UI (not only the admin):
-
-- Create publisher: `http://127.0.0.1:8000/publishers/create/`
-
-When an editor creates a publisher, the editor is assigned to that publisher by default (to reduce admin friction).
-
----
-
-## Editor manage pages (update/delete)
-
-Editors can also view/update/delete content via the editor manage pages:
-
-- Manage articles: `http://127.0.0.1:8000/editor/articles/`
-- Manage newsletters: `http://127.0.0.1:8000/editor/newsletters/`
-
----
-
-## Style (flake8)
-
-This project includes a `.flake8` config and passes linting:
+Lint:
 
 ```bash
 flake8 .
 ```
-
