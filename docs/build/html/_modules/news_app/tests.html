@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>news_app.tests &#8212; News App Consolidation 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for news_app.tests</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Article</span><span class="p">,</span> <span class="n">CustomUser</span><span class="p">,</span> <span class="n">Publisher</span>
+
+
+<span class="c1"># Create your tests here.</span>
+<div class="viewcode-block" id="ApiTests">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ApiTests</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    API tests for:</span>
+<span class="sd">    - GET /api/me/feed/</span>
+<span class="sd">    - GET /api/articles/&lt;id&gt;/</span>
+
+<span class="sd">    Auth method: BasicAuth.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ApiTests.setUp">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.setUp">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">APIClient</span><span class="p">()</span>
+
+        <span class="c1"># Users</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">=</span> <span class="n">CustomUser</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;test_reader&quot;</span><span class="p">,</span>
+            <span class="n">password</span><span class="o">=</span><span class="s2">&quot;readerpass123&quot;</span><span class="p">,</span>
+            <span class="n">role</span><span class="o">=</span><span class="n">CustomUser</span><span class="o">.</span><span class="n">ROLE_READER</span><span class="p">,</span>
+            <span class="n">email</span><span class="o">=</span><span class="s2">&quot;reader@test.com&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">editor</span> <span class="o">=</span> <span class="n">CustomUser</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;test_editor&quot;</span><span class="p">,</span>
+            <span class="n">password</span><span class="o">=</span><span class="s2">&quot;editorpass123&quot;</span><span class="p">,</span>
+            <span class="n">role</span><span class="o">=</span><span class="n">CustomUser</span><span class="o">.</span><span class="n">ROLE_EDITOR</span><span class="p">,</span>
+            <span class="n">email</span><span class="o">=</span><span class="s2">&quot;editor@test.com&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">journalist1</span> <span class="o">=</span> <span class="n">CustomUser</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;test_journalist1&quot;</span><span class="p">,</span>
+            <span class="n">password</span><span class="o">=</span><span class="s2">&quot;journalistpass123&quot;</span><span class="p">,</span>
+            <span class="n">role</span><span class="o">=</span><span class="n">CustomUser</span><span class="o">.</span><span class="n">ROLE_JOURNALIST</span><span class="p">,</span>
+            <span class="n">email</span><span class="o">=</span><span class="s2">&quot;j1@test.com&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">journalist2</span> <span class="o">=</span> <span class="n">CustomUser</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;test_journalist2&quot;</span><span class="p">,</span>
+            <span class="n">password</span><span class="o">=</span><span class="s2">&quot;journalistpass123&quot;</span><span class="p">,</span>
+            <span class="n">role</span><span class="o">=</span><span class="n">CustomUser</span><span class="o">.</span><span class="n">ROLE_JOURNALIST</span><span class="p">,</span>
+            <span class="n">email</span><span class="o">=</span><span class="s2">&quot;j2@test.com&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Publishers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">publisher_a</span> <span class="o">=</span> <span class="n">Publisher</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Publisher Alpha&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">publisher_b</span> <span class="o">=</span> <span class="n">Publisher</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Publisher Beta&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Articles (approved and unapproved)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">article_a1</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">publisher</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher_a</span><span class="p">,</span>
+            <span class="n">journalist</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">journalist1</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Article A1 Title&quot;</span><span class="p">,</span>
+            <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;A1 summary&quot;</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="s2">&quot;A1 body text that is definitely&quot;</span>
+            <span class="s2">&quot;long enough for the test purposes.&quot;</span><span class="p">,</span>
+            <span class="n">is_approved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">article_a2_unapproved</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">publisher</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher_a</span><span class="p">,</span>
+            <span class="n">journalist</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">journalist1</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Article A2 Draft&quot;</span><span class="p">,</span>
+            <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Draft&quot;</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="s2">&quot;Draft body text that is definitely&quot;</span>
+            <span class="s2">&quot;long enough for the test purposes.&quot;</span><span class="p">,</span>
+            <span class="n">is_approved</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">article_b1</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">publisher</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher_b</span><span class="p">,</span>
+            <span class="n">journalist</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">journalist2</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Article B1 Title&quot;</span><span class="p">,</span>
+            <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;B1 summary&quot;</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="s2">&quot;B1 body text that is definitely&quot;</span>
+            <span class="s2">&quot; long enough for the test purposes.&quot;</span><span class="p">,</span>
+            <span class="n">is_approved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.auth_as">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.auth_as">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">auth_as</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the BasicAuth header for the API client.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">token_bytes</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">b64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">token_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">(</span><span class="n">HTTP_AUTHORIZATION</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Basic </span><span class="si">{</span><span class="n">b64</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.clear_auth">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.clear_auth">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clear_auth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clears auth for testing 401 responses.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">()</span></div>
+
+
+    <span class="c1"># ----------------------</span>
+    <span class="c1"># GET /api/me/feed/</span>
+    <span class="c1"># ----------------------</span>
+<div class="viewcode-block" id="ApiTests.test_feed_requires_auth">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_feed_requires_auth">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_feed_requires_auth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_auth</span><span class="p">()</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/api/me/feed/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">401</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.test_feed_reader_no_subscriptions_empty">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_feed_reader_no_subscriptions_empty">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_feed_reader_no_subscriptions_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_as</span><span class="p">(</span><span class="s2">&quot;test_reader&quot;</span><span class="p">,</span> <span class="s2">&quot;readerpass123&quot;</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/api/me/feed/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">],</span> <span class="p">[])</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.test_feed_reader_publisher_subscription_returns_match_approved_only">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_feed_reader_publisher_subscription_returns_match_approved_only">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_feed_reader_publisher_subscription_returns_match_approved_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Subscribe reader to Publisher A</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">subscribed_publishers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher_a</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_as</span><span class="p">(</span><span class="s2">&quot;test_reader&quot;</span><span class="p">,</span> <span class="s2">&quot;readerpass123&quot;</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/api/me/feed/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">])</span>
+
+        <span class="n">returned_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]]</span>
+
+        <span class="c1"># Approved + matching publisher should be included</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">article_a1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">returned_ids</span><span class="p">)</span>
+
+        <span class="c1"># Unapproved should never show up in the feed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertNotIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">article_a2_unapproved</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">returned_ids</span><span class="p">)</span>
+
+        <span class="c1"># Different publisher should not show up</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertNotIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">article_b1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">returned_ids</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.test_feed_reader_journalist_subscription_returns_matching_approved">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_feed_reader_journalist_subscription_returns_matching_approved">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_feed_reader_journalist_subscription_returns_matching_approved</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Subscribe reader to Journalist 2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">subscribed_journalists</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">journalist2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_as</span><span class="p">(</span><span class="s2">&quot;test_reader&quot;</span><span class="p">,</span> <span class="s2">&quot;readerpass123&quot;</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/api/me/feed/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+        <span class="n">returned_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">article_b1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">returned_ids</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertNotIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">article_a1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">returned_ids</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.test_feed_reader_union_of_subscriptions">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_feed_reader_union_of_subscriptions">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_feed_reader_union_of_subscriptions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">subscribed_publishers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher_a</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">subscribed_journalists</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">journalist2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_as</span><span class="p">(</span><span class="s2">&quot;test_reader&quot;</span><span class="p">,</span> <span class="s2">&quot;readerpass123&quot;</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/api/me/feed/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+        <span class="n">returned_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">article_a1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">returned_ids</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">article_b1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">returned_ids</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.test_feed_non_reader_forbidden">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_feed_non_reader_forbidden">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_feed_non_reader_forbidden</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_as</span><span class="p">(</span><span class="s2">&quot;test_editor&quot;</span><span class="p">,</span> <span class="s2">&quot;editorpass123&quot;</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/api/me/feed/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">403</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">])</span></div>
+
+
+    <span class="c1"># ----------------------------</span>
+    <span class="c1"># GET /api/articles/&lt;id&gt;/</span>
+    <span class="c1"># ----------------------------</span>
+<div class="viewcode-block" id="ApiTests.test_detail_requires_auth">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_detail_requires_auth">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_detail_requires_auth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_auth</span><span class="p">()</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/api/articles/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">article_a1</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">401</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.test_detail_reader_allowed_returns_200">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_detail_reader_allowed_returns_200">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_detail_reader_allowed_returns_200</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Make the article &quot;allowed&quot; via publisher subscription</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">subscribed_publishers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher_a</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_as</span><span class="p">(</span><span class="s2">&quot;test_reader&quot;</span><span class="p">,</span> <span class="s2">&quot;readerpass123&quot;</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/api/articles/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">article_a1</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">article_a1</span><span class="o">.</span><span class="n">id</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.test_detail_reader_not_subscribed_returns_404">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_detail_reader_not_subscribed_returns_404">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_detail_reader_not_subscribed_returns_404</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_as</span><span class="p">(</span><span class="s2">&quot;test_reader&quot;</span><span class="p">,</span> <span class="s2">&quot;readerpass123&quot;</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/api/articles/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">article_a1</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.test_detail_reader_subscribed_but_unapproved_returns_404">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_detail_reader_subscribed_but_unapproved_returns_404">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_detail_reader_subscribed_but_unapproved_returns_404</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">subscribed_publishers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher_a</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_as</span><span class="p">(</span><span class="s2">&quot;test_reader&quot;</span><span class="p">,</span> <span class="s2">&quot;readerpass123&quot;</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/api/articles/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">article_a2_unapproved</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ApiTests.test_detail_non_reader_forbidden">
+<a class="viewcode-back" href="../../news_app.html#news_app.tests.ApiTests.test_detail_non_reader_forbidden">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_detail_non_reader_forbidden</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_as</span><span class="p">(</span><span class="s2">&quot;test_editor&quot;</span><span class="p">,</span> <span class="s2">&quot;editorpass123&quot;</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/api/articles/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">article_a1</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">403</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">])</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">News App Consolidation</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">news_app</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Alexander Myburgh.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

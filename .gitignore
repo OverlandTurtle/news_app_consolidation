@@ -9,3 +9,6 @@ __pycache__/
 
 # Local secrets
 .env
+
+# Sphinx build cache
+/docs/build/doctrees/

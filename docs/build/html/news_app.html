@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>news_app package &#8212; News App Consolidation 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="news_app.management package" href="news_app.management.html" />
+    <link rel="prev" title="news_app" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="news-app-package">
+<h1>news_app package<a class="headerlink" href="#news-app-package" title="Link to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="news_app.management.html">news_app.management package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="news_app.management.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="news_app.management.commands.html">news_app.management.commands package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="news_app.management.commands.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="news_app.management.commands.html#module-news_app.management.commands.setup_roles">news_app.management.commands.setup_roles module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="news_app.management.commands.html#module-news_app.management.commands">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="news_app.management.html#module-news_app.management">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="news_app.migrations.html">news_app.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="news_app.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news_app.migrations.html#module-news_app.migrations.0001_initial">news_app.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="news_app.migrations.html#module-news_app.migrations.0002_alter_article_publisher">news_app.migrations.0002_alter_article_publisher module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0002_alter_article_publisher.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0002_alter_article_publisher.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0002_alter_article_publisher.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="news_app.migrations.html#module-news_app.migrations.0003_newsletter">news_app.migrations.0003_newsletter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0003_newsletter.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0003_newsletter.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0003_newsletter.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="news_app.migrations.html#module-news_app.migrations.0004_alter_newsletter_options_alter_newsletter_journalist">news_app.migrations.0004_alter_newsletter_options_alter_newsletter_journalist module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0004_alter_newsletter_options_alter_newsletter_journalist.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0004_alter_newsletter_options_alter_newsletter_journalist.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="news_app.migrations.html#news_app.migrations.0004_alter_newsletter_options_alter_newsletter_journalist.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="news_app.migrations.html#module-news_app.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-news_app.admin">
+<span id="news-app-admin-module"></span><h2>news_app.admin module<a class="headerlink" href="#module-news_app.admin" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.admin.ArticleAdmin">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.admin.</span></span><span class="sig-name descname"><span class="pre">ArticleAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/admin.html#ArticleAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.admin.ArticleAdmin" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.admin.ArticleAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('title',</span> <span class="pre">'publisher',</span> <span class="pre">'journalist',</span> <span class="pre">'is_approved',</span> <span class="pre">'created_at')</span></span><a class="headerlink" href="#news_app.admin.ArticleAdmin.list_display" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.admin.ArticleAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('is_approved',</span> <span class="pre">'publisher',</span> <span class="pre">'created_at')</span></span><a class="headerlink" href="#news_app.admin.ArticleAdmin.list_filter" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="news_app.admin.ArticleAdmin.media">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#news_app.admin.ArticleAdmin.media" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.admin.ArticleAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('title',</span> <span class="pre">'summary',</span> <span class="pre">'body',</span> <span class="pre">'journalist__username')</span></span><a class="headerlink" href="#news_app.admin.ArticleAdmin.search_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.admin.CustomUserAdmin">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.admin.</span></span><span class="sig-name descname"><span class="pre">CustomUserAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/admin.html#CustomUserAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.admin.CustomUserAdmin" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.admin.CustomUserAdmin.fieldsets">
+<span class="sig-name descname"><span class="pre">fieldsets</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">((None,</span> <span class="pre">{'fields':</span> <span class="pre">('username',</span> <span class="pre">'password')}),</span> <span class="pre">('Personal</span> <span class="pre">info',</span> <span class="pre">{'fields':</span> <span class="pre">('first_name',</span> <span class="pre">'last_name',</span> <span class="pre">'email')}),</span> <span class="pre">('Permissions',</span> <span class="pre">{'fields':</span> <span class="pre">('is_active',</span> <span class="pre">'is_staff',</span> <span class="pre">'is_superuser',</span> <span class="pre">'groups',</span> <span class="pre">'user_permissions')}),</span> <span class="pre">('Important</span> <span class="pre">dates',</span> <span class="pre">{'fields':</span> <span class="pre">('last_login',</span> <span class="pre">'date_joined')}),</span> <span class="pre">('Role',</span> <span class="pre">{'fields':</span> <span class="pre">('role',)}),</span> <span class="pre">('Reader</span> <span class="pre">subscriptions',</span> <span class="pre">{'fields':</span> <span class="pre">('subscribed_publishers',</span> <span class="pre">'subscribed_journalists')}))</span></span><a class="headerlink" href="#news_app.admin.CustomUserAdmin.fieldsets" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.admin.CustomUserAdmin.filter_horizontal">
+<span class="sig-name descname"><span class="pre">filter_horizontal</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('subscribed_publishers',</span> <span class="pre">'subscribed_journalists')</span></span><a class="headerlink" href="#news_app.admin.CustomUserAdmin.filter_horizontal" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.admin.CustomUserAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('username',</span> <span class="pre">'email',</span> <span class="pre">'role',</span> <span class="pre">'is_staff',</span> <span class="pre">'is_active')</span></span><a class="headerlink" href="#news_app.admin.CustomUserAdmin.list_display" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="news_app.admin.CustomUserAdmin.media">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#news_app.admin.CustomUserAdmin.media" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.admin.PublisherAdmin">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.admin.</span></span><span class="sig-name descname"><span class="pre">PublisherAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/admin.html#PublisherAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.admin.PublisherAdmin" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.admin.PublisherAdmin.filter_horizontal">
+<span class="sig-name descname"><span class="pre">filter_horizontal</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('editors',</span> <span class="pre">'journalists')</span></span><a class="headerlink" href="#news_app.admin.PublisherAdmin.filter_horizontal" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.admin.PublisherAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'website',</span> <span class="pre">'created_at')</span></span><a class="headerlink" href="#news_app.admin.PublisherAdmin.list_display" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="news_app.admin.PublisherAdmin.media">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#news_app.admin.PublisherAdmin.media" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.admin.PublisherAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></span><a class="headerlink" href="#news_app.admin.PublisherAdmin.search_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-news_app.api_urls">
+<span id="news-app-api-urls-module"></span><h2>news_app.api_urls module<a class="headerlink" href="#module-news_app.api_urls" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-news_app.api_views">
+<span id="news-app-api-views-module"></span><h2>news_app.api_views module<a class="headerlink" href="#module-news_app.api_views" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.api_views.article_detail_api">
+<span class="sig-prename descclassname"><span class="pre">news_app.api_views.</span></span><span class="sig-name descname"><span class="pre">article_detail_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/api_views.html#article_detail_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.api_views.article_detail_api" title="Link to this definition">¶</a></dt>
+<dd><p>GET /api/articles/&lt;id&gt;/</p>
+<p>Reader only endpoint.
+Returns a single approved article, only if it matches the authenticated
+Reader’s subscriptions (publisher OR journalist).</p>
+<p>If not allowed, return 404.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.api_views.my_feed">
+<span class="sig-prename descclassname"><span class="pre">news_app.api_views.</span></span><span class="sig-name descname"><span class="pre">my_feed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/api_views.html#my_feed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.api_views.my_feed" title="Link to this definition">¶</a></dt>
+<dd><p>Reader only endpoint.
+Returns approved articles,
+filtered by the authenticated Reader’s subscriptions:
+- subscribed publishers
+- subscribed journalists.</p>
+</dd></dl>
+
+</section>
+<section id="module-news_app.apps">
+<span id="news-app-apps-module"></span><h2>news_app.apps module<a class="headerlink" href="#module-news_app.apps" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.apps.NewsAppConfig">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.apps.</span></span><span class="sig-name descname"><span class="pre">NewsAppConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/apps.html#NewsAppConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.apps.NewsAppConfig" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.apps.NewsAppConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'news_app'</span></span><a class="headerlink" href="#news_app.apps.NewsAppConfig.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-news_app.forms">
+<span id="news-app-forms-module"></span><h2>news_app.forms module<a class="headerlink" href="#module-news_app.forms" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.forms.ArticleForm">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.forms.</span></span><span class="sig-name descname"><span class="pre">ArticleForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/forms.html#ArticleForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.ArticleForm" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<p>Form for journalists to create/edit an article.</p>
+<ul class="simple">
+<li><p>only expose fields the journalist should type.</p></li>
+<li><p>journalist and is_approved are controlled in the view.</p></li>
+</ul>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.forms.ArticleForm.Meta">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="_modules/news_app/forms.html#ArticleForm.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.ArticleForm.Meta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.ArticleForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['publisher',</span> <span class="pre">'title',</span> <span class="pre">'summary',</span> <span class="pre">'body']</span></span><a class="headerlink" href="#news_app.forms.ArticleForm.Meta.fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.ArticleForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#news_app.forms.ArticleForm.Meta.model" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#news_app.models.Article" title="news_app.models.Article"><code class="xref py py-class docutils literal notranslate"><span class="pre">Article</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.ArticleForm.Meta.widgets">
+<span class="sig-name descname"><span class="pre">widgets</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'body':</span> <span class="pre">&lt;django.forms.widgets.Textarea</span> <span class="pre">object&gt;,</span> <span class="pre">'summary':</span> <span class="pre">&lt;django.forms.widgets.Textarea</span> <span class="pre">object&gt;}</span></span><a class="headerlink" href="#news_app.forms.ArticleForm.Meta.widgets" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.ArticleForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'body':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'publisher':</span> <span class="pre">&lt;django.forms.models.ModelChoiceField</span> <span class="pre">object&gt;,</span> <span class="pre">'summary':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'title':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></span><a class="headerlink" href="#news_app.forms.ArticleForm.base_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.forms.ArticleForm.clean_body">
+<span class="sig-name descname"><span class="pre">clean_body</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/forms.html#ArticleForm.clean_body"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.ArticleForm.clean_body" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.forms.ArticleForm.clean_title">
+<span class="sig-name descname"><span class="pre">clean_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/forms.html#ArticleForm.clean_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.ArticleForm.clean_title" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.ArticleForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#news_app.forms.ArticleForm.declared_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="news_app.forms.ArticleForm.media">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#news_app.forms.ArticleForm.media" title="Link to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.forms.CustomUserCreationForm">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.forms.</span></span><span class="sig-name descname"><span class="pre">CustomUserCreationForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/forms.html#CustomUserCreationForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.CustomUserCreationForm" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserCreationForm</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.forms.CustomUserCreationForm.Meta">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="_modules/news_app/forms.html#CustomUserCreationForm.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.CustomUserCreationForm.Meta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Meta</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.CustomUserCreationForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('username',</span> <span class="pre">'email',</span> <span class="pre">'role')</span></span><a class="headerlink" href="#news_app.forms.CustomUserCreationForm.Meta.fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.CustomUserCreationForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#news_app.forms.CustomUserCreationForm.Meta.model" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#news_app.models.CustomUser" title="news_app.models.CustomUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomUser</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.CustomUserCreationForm.ROLE_EMPTY">
+<span class="sig-name descname"><span class="pre">ROLE_EMPTY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span><a class="headerlink" href="#news_app.forms.CustomUserCreationForm.ROLE_EMPTY" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.CustomUserCreationForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'email':</span> <span class="pre">&lt;django.forms.fields.EmailField</span> <span class="pre">object&gt;,</span> <span class="pre">'password1':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'password2':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'role':</span> <span class="pre">&lt;django.forms.fields.ChoiceField</span> <span class="pre">object&gt;,</span> <span class="pre">'username':</span> <span class="pre">&lt;django.contrib.auth.forms.UsernameField</span> <span class="pre">object&gt;}</span></span><a class="headerlink" href="#news_app.forms.CustomUserCreationForm.base_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.forms.CustomUserCreationForm.clean_role">
+<span class="sig-name descname"><span class="pre">clean_role</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/forms.html#CustomUserCreationForm.clean_role"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.CustomUserCreationForm.clean_role" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.CustomUserCreationForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'password1':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'password2':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'role':</span> <span class="pre">&lt;django.forms.fields.ChoiceField</span> <span class="pre">object&gt;}</span></span><a class="headerlink" href="#news_app.forms.CustomUserCreationForm.declared_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="news_app.forms.CustomUserCreationForm.media">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#news_app.forms.CustomUserCreationForm.media" title="Link to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.forms.NewsletterForm">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.forms.</span></span><span class="sig-name descname"><span class="pre">NewsletterForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/forms.html#NewsletterForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.NewsletterForm" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.forms.NewsletterForm.Meta">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="_modules/news_app/forms.html#NewsletterForm.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.NewsletterForm.Meta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.NewsletterForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['publisher',</span> <span class="pre">'title',</span> <span class="pre">'body']</span></span><a class="headerlink" href="#news_app.forms.NewsletterForm.Meta.fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.NewsletterForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#news_app.forms.NewsletterForm.Meta.model" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#news_app.models.Newsletter" title="news_app.models.Newsletter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Newsletter</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.NewsletterForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'body':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'publisher':</span> <span class="pre">&lt;django.forms.models.ModelChoiceField</span> <span class="pre">object&gt;,</span> <span class="pre">'title':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></span><a class="headerlink" href="#news_app.forms.NewsletterForm.base_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.forms.NewsletterForm.clean_body">
+<span class="sig-name descname"><span class="pre">clean_body</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/forms.html#NewsletterForm.clean_body"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.NewsletterForm.clean_body" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.forms.NewsletterForm.clean_title">
+<span class="sig-name descname"><span class="pre">clean_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/forms.html#NewsletterForm.clean_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.NewsletterForm.clean_title" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.NewsletterForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#news_app.forms.NewsletterForm.declared_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="news_app.forms.NewsletterForm.media">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#news_app.forms.NewsletterForm.media" title="Link to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.forms.PublisherForm">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.forms.</span></span><span class="sig-name descname"><span class="pre">PublisherForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/forms.html#PublisherForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.PublisherForm" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<p>Publisher create form (Editor only view will use this).
+- name required
+- website optional</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.forms.PublisherForm.Meta">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="_modules/news_app/forms.html#PublisherForm.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.PublisherForm.Meta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.PublisherForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['name',</span> <span class="pre">'website']</span></span><a class="headerlink" href="#news_app.forms.PublisherForm.Meta.fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.PublisherForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#news_app.forms.PublisherForm.Meta.model" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#news_app.models.Publisher" title="news_app.models.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Publisher</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.PublisherForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'name':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'website':</span> <span class="pre">&lt;django.forms.fields.URLField</span> <span class="pre">object&gt;}</span></span><a class="headerlink" href="#news_app.forms.PublisherForm.base_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.forms.PublisherForm.clean_name">
+<span class="sig-name descname"><span class="pre">clean_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/forms.html#PublisherForm.clean_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.forms.PublisherForm.clean_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.forms.PublisherForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#news_app.forms.PublisherForm.declared_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="news_app.forms.PublisherForm.media">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#news_app.forms.PublisherForm.media" title="Link to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-news_app.models">
+<span id="news-app-models-module"></span><h2>news_app.models module<a class="headerlink" href="#module-news_app.models" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.models.Article">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.models.</span></span><span class="sig-name descname"><span class="pre">Article</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/models.html#Article"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.models.Article" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>An article written by a journalist.
+- Must indicate whether the article has been approved by an editor or not.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.Article.DoesNotExist">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#news_app.models.Article.DoesNotExist" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.Article.MultipleObjectsReturned">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#news_app.models.Article.MultipleObjectsReturned" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.Article.NotUpdated">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">NotUpdated</span></span><a class="headerlink" href="#news_app.models.Article.NotUpdated" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectNotUpdated</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseError</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.body">
+<span class="sig-name descname"><span class="pre">body</span></span><a class="headerlink" href="#news_app.models.Article.body" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><a class="headerlink" href="#news_app.models.Article.created_at" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.Article.get_next_by_created_at">
+<span class="sig-name descname"><span class="pre">get_next_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.Article.get_next_by_created_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.Article.get_next_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_next_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.Article.get_next_by_updated_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.Article.get_previous_by_created_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.Article.get_previous_by_created_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.Article.get_previous_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.Article.get_previous_by_updated_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#news_app.models.Article.id" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.is_approved">
+<span class="sig-name descname"><span class="pre">is_approved</span></span><a class="headerlink" href="#news_app.models.Article.is_approved" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.journalist">
+<span class="sig-name descname"><span class="pre">journalist</span></span><a class="headerlink" href="#news_app.models.Article.journalist" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.journalist_id">
+<span class="sig-name descname"><span class="pre">journalist_id</span></span><a class="headerlink" href="#news_app.models.Article.journalist_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></span><a class="headerlink" href="#news_app.models.Article.objects" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.publisher">
+<span class="sig-name descname"><span class="pre">publisher</span></span><a class="headerlink" href="#news_app.models.Article.publisher" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.publisher_id">
+<span class="sig-name descname"><span class="pre">publisher_id</span></span><a class="headerlink" href="#news_app.models.Article.publisher_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><a class="headerlink" href="#news_app.models.Article.summary" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.title">
+<span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#news_app.models.Article.title" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Article.updated_at">
+<span class="sig-name descname"><span class="pre">updated_at</span></span><a class="headerlink" href="#news_app.models.Article.updated_at" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.models.CustomUser">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.models.</span></span><span class="sig-name descname"><span class="pre">CustomUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/models.html#CustomUser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.models.CustomUser" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractUser</span></code></p>
+<p>Custom user model with role field.</p>
+<ul class="simple">
+<li><p>Role selects which Group the user is placed into:
+Readers / Editors / Journalists.</p></li>
+<li><p>Subscriptions only for Readers. Django ManyToMany fields cannot be None,
+so we enforce “empty” vs “used”.</p></li>
+</ul>
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.DoesNotExist">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#news_app.models.CustomUser.DoesNotExist" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.MultipleObjectsReturned">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#news_app.models.CustomUser.MultipleObjectsReturned" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.NotUpdated">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">NotUpdated</span></span><a class="headerlink" href="#news_app.models.CustomUser.NotUpdated" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectNotUpdated</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseError</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.ROLE_CHOICES">
+<span class="sig-name descname"><span class="pre">ROLE_CHOICES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('reader',</span> <span class="pre">'Reader'),</span> <span class="pre">('editor',</span> <span class="pre">'Editor'),</span> <span class="pre">('journalist',</span> <span class="pre">'Journalist')]</span></span><a class="headerlink" href="#news_app.models.CustomUser.ROLE_CHOICES" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.ROLE_EDITOR">
+<span class="sig-name descname"><span class="pre">ROLE_EDITOR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'editor'</span></span><a class="headerlink" href="#news_app.models.CustomUser.ROLE_EDITOR" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.ROLE_JOURNALIST">
+<span class="sig-name descname"><span class="pre">ROLE_JOURNALIST</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'journalist'</span></span><a class="headerlink" href="#news_app.models.CustomUser.ROLE_JOURNALIST" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.ROLE_READER">
+<span class="sig-name descname"><span class="pre">ROLE_READER</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'reader'</span></span><a class="headerlink" href="#news_app.models.CustomUser.ROLE_READER" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.date_joined">
+<span class="sig-name descname"><span class="pre">date_joined</span></span><a class="headerlink" href="#news_app.models.CustomUser.date_joined" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#news_app.models.CustomUser.email" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#news_app.models.CustomUser.first_name" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.get_next_by_date_joined">
+<span class="sig-name descname"><span class="pre">get_next_by_date_joined</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">date_joined&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.CustomUser.get_next_by_date_joined" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.get_previous_by_date_joined">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_joined</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">date_joined&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.CustomUser.get_previous_by_date_joined" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.get_role_display">
+<span class="sig-name descname"><span class="pre">get_role_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.CharField:</span> <span class="pre">role&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.CustomUser.get_role_display" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.groups">
+<span class="sig-name descname"><span class="pre">groups</span></span><a class="headerlink" href="#news_app.models.CustomUser.groups" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#news_app.models.CustomUser.id" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.independent_articles">
+<span class="sig-name descname"><span class="pre">independent_articles</span></span><a class="headerlink" href="#news_app.models.CustomUser.independent_articles" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_reverse_many_to_one_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.is_active">
+<span class="sig-name descname"><span class="pre">is_active</span></span><a class="headerlink" href="#news_app.models.CustomUser.is_active" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.is_staff">
+<span class="sig-name descname"><span class="pre">is_staff</span></span><a class="headerlink" href="#news_app.models.CustomUser.is_staff" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.is_superuser">
+<span class="sig-name descname"><span class="pre">is_superuser</span></span><a class="headerlink" href="#news_app.models.CustomUser.is_superuser" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.last_login">
+<span class="sig-name descname"><span class="pre">last_login</span></span><a class="headerlink" href="#news_app.models.CustomUser.last_login" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><a class="headerlink" href="#news_app.models.CustomUser.last_name" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.logentry_set">
+<span class="sig-name descname"><span class="pre">logentry_set</span></span><a class="headerlink" href="#news_app.models.CustomUser.logentry_set" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_reverse_many_to_one_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.newsletters">
+<span class="sig-name descname"><span class="pre">newsletters</span></span><a class="headerlink" href="#news_app.models.CustomUser.newsletters" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_reverse_many_to_one_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#news_app.models.CustomUser.password" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.publishers_as_editor">
+<span class="sig-name descname"><span class="pre">publishers_as_editor</span></span><a class="headerlink" href="#news_app.models.CustomUser.publishers_as_editor" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.publishers_as_journalist">
+<span class="sig-name descname"><span class="pre">publishers_as_journalist</span></span><a class="headerlink" href="#news_app.models.CustomUser.publishers_as_journalist" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.role">
+<span class="sig-name descname"><span class="pre">role</span></span><a class="headerlink" href="#news_app.models.CustomUser.role" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.subscribed_journalists">
+<span class="sig-name descname"><span class="pre">subscribed_journalists</span></span><a class="headerlink" href="#news_app.models.CustomUser.subscribed_journalists" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.subscribed_publishers">
+<span class="sig-name descname"><span class="pre">subscribed_publishers</span></span><a class="headerlink" href="#news_app.models.CustomUser.subscribed_publishers" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.subscribed_readers_to_journalists">
+<span class="sig-name descname"><span class="pre">subscribed_readers_to_journalists</span></span><a class="headerlink" href="#news_app.models.CustomUser.subscribed_readers_to_journalists" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.user_permissions">
+<span class="sig-name descname"><span class="pre">user_permissions</span></span><a class="headerlink" href="#news_app.models.CustomUser.user_permissions" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.CustomUser.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#news_app.models.CustomUser.username" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.models.Newsletter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.models.</span></span><span class="sig-name descname"><span class="pre">Newsletter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publisher</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">journalist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_approved</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updated_at</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/models.html#Newsletter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.models.Newsletter" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.DoesNotExist">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#news_app.models.Newsletter.DoesNotExist" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.MultipleObjectsReturned">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#news_app.models.Newsletter.MultipleObjectsReturned" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.NotUpdated">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">NotUpdated</span></span><a class="headerlink" href="#news_app.models.Newsletter.NotUpdated" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectNotUpdated</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseError</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.body">
+<span class="sig-name descname"><span class="pre">body</span></span><a class="headerlink" href="#news_app.models.Newsletter.body" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><a class="headerlink" href="#news_app.models.Newsletter.created_at" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.get_next_by_created_at">
+<span class="sig-name descname"><span class="pre">get_next_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.Newsletter.get_next_by_created_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.get_next_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_next_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.Newsletter.get_next_by_updated_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.get_previous_by_created_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.Newsletter.get_previous_by_created_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.get_previous_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.Newsletter.get_previous_by_updated_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#news_app.models.Newsletter.id" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.is_approved">
+<span class="sig-name descname"><span class="pre">is_approved</span></span><a class="headerlink" href="#news_app.models.Newsletter.is_approved" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.journalist">
+<span class="sig-name descname"><span class="pre">journalist</span></span><a class="headerlink" href="#news_app.models.Newsletter.journalist" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.journalist_id">
+<span class="sig-name descname"><span class="pre">journalist_id</span></span><a class="headerlink" href="#news_app.models.Newsletter.journalist_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></span><a class="headerlink" href="#news_app.models.Newsletter.objects" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.publisher">
+<span class="sig-name descname"><span class="pre">publisher</span></span><a class="headerlink" href="#news_app.models.Newsletter.publisher" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.publisher_id">
+<span class="sig-name descname"><span class="pre">publisher_id</span></span><a class="headerlink" href="#news_app.models.Newsletter.publisher_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.title">
+<span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#news_app.models.Newsletter.title" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Newsletter.updated_at">
+<span class="sig-name descname"><span class="pre">updated_at</span></span><a class="headerlink" href="#news_app.models.Newsletter.updated_at" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.models.Publisher">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.models.</span></span><span class="sig-name descname"><span class="pre">Publisher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/models.html#Publisher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.models.Publisher" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>A news publisher.
+- A publisher can have multiple editors and journalists.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.Publisher.DoesNotExist">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#news_app.models.Publisher.DoesNotExist" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.Publisher.MultipleObjectsReturned">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#news_app.models.Publisher.MultipleObjectsReturned" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="news_app.models.Publisher.NotUpdated">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">NotUpdated</span></span><a class="headerlink" href="#news_app.models.Publisher.NotUpdated" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectNotUpdated</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseError</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Publisher.articles">
+<span class="sig-name descname"><span class="pre">articles</span></span><a class="headerlink" href="#news_app.models.Publisher.articles" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_reverse_many_to_one_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Publisher.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><a class="headerlink" href="#news_app.models.Publisher.created_at" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Publisher.editors">
+<span class="sig-name descname"><span class="pre">editors</span></span><a class="headerlink" href="#news_app.models.Publisher.editors" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.Publisher.get_next_by_created_at">
+<span class="sig-name descname"><span class="pre">get_next_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.Publisher.get_next_by_created_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.models.Publisher.get_previous_by_created_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#news_app.models.Publisher.get_previous_by_created_at" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Publisher.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#news_app.models.Publisher.id" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Publisher.journalists">
+<span class="sig-name descname"><span class="pre">journalists</span></span><a class="headerlink" href="#news_app.models.Publisher.journalists" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Publisher.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#news_app.models.Publisher.name" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Publisher.newsletters">
+<span class="sig-name descname"><span class="pre">newsletters</span></span><a class="headerlink" href="#news_app.models.Publisher.newsletters" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_reverse_many_to_one_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Publisher.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></span><a class="headerlink" href="#news_app.models.Publisher.objects" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Publisher.subscribed_readers">
+<span class="sig-name descname"><span class="pre">subscribed_readers</span></span><a class="headerlink" href="#news_app.models.Publisher.subscribed_readers" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.models.Publisher.website">
+<span class="sig-name descname"><span class="pre">website</span></span><a class="headerlink" href="#news_app.models.Publisher.website" title="Link to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-news_app.roles">
+<span id="news-app-roles-module"></span><h2>news_app.roles module<a class="headerlink" href="#module-news_app.roles" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.roles.ensure_role_groups_exist">
+<span class="sig-prename descclassname"><span class="pre">news_app.roles.</span></span><span class="sig-name descname"><span class="pre">ensure_role_groups_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/roles.html#ensure_role_groups_exist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.roles.ensure_role_groups_exist" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-news_app.serializers">
+<span id="news-app-serializers-module"></span><h2>news_app.serializers module<a class="headerlink" href="#module-news_app.serializers" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.serializers.ArticleFeedSerializer">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.serializers.</span></span><span class="sig-name descname"><span class="pre">ArticleFeedSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/serializers.html#ArticleFeedSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.serializers.ArticleFeedSerializer" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for Reader feed endpoint.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.serializers.ArticleFeedSerializer.Meta">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="_modules/news_app/serializers.html#ArticleFeedSerializer.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.serializers.ArticleFeedSerializer.Meta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.serializers.ArticleFeedSerializer.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'title',</span> <span class="pre">'summary',</span> <span class="pre">'body',</span> <span class="pre">'publisher_name',</span> <span class="pre">'journalist_username',</span> <span class="pre">'created_at']</span></span><a class="headerlink" href="#news_app.serializers.ArticleFeedSerializer.Meta.fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="news_app.serializers.ArticleFeedSerializer.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#news_app.serializers.ArticleFeedSerializer.Meta.model" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#news_app.models.Article" title="news_app.models.Article"><code class="xref py py-class docutils literal notranslate"><span class="pre">Article</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.serializers.ArticleFeedSerializer.get_journalist_username">
+<span class="sig-name descname"><span class="pre">get_journalist_username</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/serializers.html#ArticleFeedSerializer.get_journalist_username"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.serializers.ArticleFeedSerializer.get_journalist_username" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.serializers.ArticleFeedSerializer.get_publisher_name">
+<span class="sig-name descname"><span class="pre">get_publisher_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/serializers.html#ArticleFeedSerializer.get_publisher_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.serializers.ArticleFeedSerializer.get_publisher_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-news_app.tests">
+<span id="news-app-tests-module"></span><h2>news_app.tests module<a class="headerlink" href="#module-news_app.tests" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">news_app.tests.</span></span><span class="sig-name descname"><span class="pre">ApiTests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>API tests for:
+- GET /api/me/feed/
+- GET /api/articles/&lt;id&gt;/</p>
+<p>Auth method: BasicAuth.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.auth_as">
+<span class="sig-name descname"><span class="pre">auth_as</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.auth_as"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.auth_as" title="Link to this definition">¶</a></dt>
+<dd><p>Sets the BasicAuth header for the API client.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.clear_auth">
+<span class="sig-name descname"><span class="pre">clear_auth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.clear_auth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.clear_auth" title="Link to this definition">¶</a></dt>
+<dd><p>Clears auth for testing 401 responses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.setUp" title="Link to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_detail_non_reader_forbidden">
+<span class="sig-name descname"><span class="pre">test_detail_non_reader_forbidden</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_detail_non_reader_forbidden"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_detail_non_reader_forbidden" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_detail_reader_allowed_returns_200">
+<span class="sig-name descname"><span class="pre">test_detail_reader_allowed_returns_200</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_detail_reader_allowed_returns_200"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_detail_reader_allowed_returns_200" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_detail_reader_not_subscribed_returns_404">
+<span class="sig-name descname"><span class="pre">test_detail_reader_not_subscribed_returns_404</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_detail_reader_not_subscribed_returns_404"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_detail_reader_not_subscribed_returns_404" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_detail_reader_subscribed_but_unapproved_returns_404">
+<span class="sig-name descname"><span class="pre">test_detail_reader_subscribed_but_unapproved_returns_404</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_detail_reader_subscribed_but_unapproved_returns_404"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_detail_reader_subscribed_but_unapproved_returns_404" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_detail_requires_auth">
+<span class="sig-name descname"><span class="pre">test_detail_requires_auth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_detail_requires_auth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_detail_requires_auth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_feed_non_reader_forbidden">
+<span class="sig-name descname"><span class="pre">test_feed_non_reader_forbidden</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_feed_non_reader_forbidden"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_feed_non_reader_forbidden" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_feed_reader_journalist_subscription_returns_matching_approved">
+<span class="sig-name descname"><span class="pre">test_feed_reader_journalist_subscription_returns_matching_approved</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_feed_reader_journalist_subscription_returns_matching_approved"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_feed_reader_journalist_subscription_returns_matching_approved" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_feed_reader_no_subscriptions_empty">
+<span class="sig-name descname"><span class="pre">test_feed_reader_no_subscriptions_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_feed_reader_no_subscriptions_empty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_feed_reader_no_subscriptions_empty" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_feed_reader_publisher_subscription_returns_match_approved_only">
+<span class="sig-name descname"><span class="pre">test_feed_reader_publisher_subscription_returns_match_approved_only</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_feed_reader_publisher_subscription_returns_match_approved_only"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_feed_reader_publisher_subscription_returns_match_approved_only" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_feed_reader_union_of_subscriptions">
+<span class="sig-name descname"><span class="pre">test_feed_reader_union_of_subscriptions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_feed_reader_union_of_subscriptions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_feed_reader_union_of_subscriptions" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news_app.tests.ApiTests.test_feed_requires_auth">
+<span class="sig-name descname"><span class="pre">test_feed_requires_auth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/tests.html#ApiTests.test_feed_requires_auth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.tests.ApiTests.test_feed_requires_auth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-news_app.urls">
+<span id="news-app-urls-module"></span><h2>news_app.urls module<a class="headerlink" href="#module-news_app.urls" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-news_app.views">
+<span id="news-app-views-module"></span><h2>news_app.views module<a class="headerlink" href="#module-news_app.views" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.article_create">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">article_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#article_create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.article_create" title="Link to this definition">¶</a></dt>
+<dd><p>Journalist only.
+Articles created here are always drafts (is_approved=False).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.article_delete">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">article_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">article_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#article_delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.article_delete" title="Link to this definition">¶</a></dt>
+<dd><p>Journalist only.
+Only allow deleting own articles.
+If approved, deleting is blocked.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.article_detail">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">article_detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">article_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#article_detail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.article_detail" title="Link to this definition">¶</a></dt>
+<dd><p>Reader detail page.
+Only allow access to approved articles (if not approved, 404).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.article_edit">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">article_edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">article_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#article_edit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.article_edit" title="Link to this definition">¶</a></dt>
+<dd><p>Journalist only.
+Only allow editing on your own articles.
+If approved, editing is blocked.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.article_list">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">article_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#article_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.article_list" title="Link to this definition">¶</a></dt>
+<dd><p>Reader list page.
+Only show approved articles.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.dashboard">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">dashboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#dashboard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.dashboard" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_approve_article">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_approve_article</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">article_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_approve_article"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_approve_article" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+Approves an article (is_approved=True) then:
+- emails subscribers (publisher + journalist subscriptions)
+- posts to X
+No signals.</p>
+<p>Even if email/X fails, the approval still succeeds.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_approve_newsletter">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_approve_newsletter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newsletter_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_approve_newsletter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_approve_newsletter" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+Approves a newsletter (is_approved=True) then:
+- emails subscribers (publisher + journalist subscriptions)
+- posts to X, best effort.
+No signals.</p>
+<p>Even if email/X fails, approval still succeeds.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_article_delete">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_article_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">article_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_article_delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_article_delete" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+Can delete allowed articles.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_article_edit">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_article_edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">article_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_article_edit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_article_edit" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+Can edit allowed articles. Approved stays approved.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_articles">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_articles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_articles" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+List of articles editor is allowed to manage.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_can_manage_publisher_item">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_can_manage_publisher_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">editor_user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publisher</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_can_manage_publisher_item"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_can_manage_publisher_item" title="Link to this definition">¶</a></dt>
+<dd><p>Returns True if editor_user is
+allowed to manage content for this publisher.
+- If publisher is independent: any editor allowed
+- If publisher exists: editor must be assigned to it</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_newsletter_delete">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_newsletter_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newsletter_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_newsletter_delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_newsletter_delete" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+Can delete allowed newsletters.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_newsletter_edit">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_newsletter_edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newsletter_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_newsletter_edit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_newsletter_edit" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+Can edit allowed newsletters. Approved stays approved.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_newsletters">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_newsletters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_newsletters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_newsletters" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+List of newsletters editor is allowed to manage.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_pending_articles">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_pending_articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_pending_articles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_pending_articles" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+Shows all articles that are not approved yet.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.editor_pending_newsletters">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">editor_pending_newsletters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#editor_pending_newsletters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.editor_pending_newsletters" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+Shows all newsletters that are not approved yet.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.home">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#home"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.home" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.journalist_list">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">journalist_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#journalist_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.journalist_list" title="Link to this definition">¶</a></dt>
+<dd><p>Reader list of all journalist users.
+Filter CustomUser by role to only show journalists.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.journalist_subscribe">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">journalist_subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">journalist_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#journalist_subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.journalist_subscribe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.journalist_unsubscribe">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">journalist_unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">journalist_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#journalist_unsubscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.journalist_unsubscribe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.login_view">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">login_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#login_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.login_view" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.logout_view">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">logout_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#logout_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.logout_view" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.my_articles">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">my_articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#my_articles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.my_articles" title="Link to this definition">¶</a></dt>
+<dd><p>Journalist only.
+Shows the logged-in journalist’s own articles, approved or not.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.my_newsletters">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">my_newsletters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#my_newsletters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.my_newsletters" title="Link to this definition">¶</a></dt>
+<dd><p>Journalist only.
+Shows the logged-in journalist’s own newsletters, approved or not.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.newsletter_create">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">newsletter_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#newsletter_create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.newsletter_create" title="Link to this definition">¶</a></dt>
+<dd><p>Journalist only.
+Newsletters created here are always drafts (is_approved=False).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.newsletter_delete">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">newsletter_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newsletter_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#newsletter_delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.newsletter_delete" title="Link to this definition">¶</a></dt>
+<dd><p>Journalist only.
+Only allow deleting own newsletters.
+If approved, deleting is blocked.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.newsletter_detail">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">newsletter_detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newsletter_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#newsletter_detail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.newsletter_detail" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.newsletter_edit">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">newsletter_edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newsletter_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#newsletter_edit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.newsletter_edit" title="Link to this definition">¶</a></dt>
+<dd><p>Journalist only.
+Only allow editing on own newsletters.
+If approved, editing is blocked.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.newsletter_list">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">newsletter_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#newsletter_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.newsletter_list" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.publisher_create">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">publisher_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#publisher_create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.publisher_create" title="Link to this definition">¶</a></dt>
+<dd><p>Editor only.
+Allows editors to add a new Publisher from the normal UI (not admin).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.publisher_list">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">publisher_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#publisher_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.publisher_list" title="Link to this definition">¶</a></dt>
+<dd><p>Reader list of all publishers.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.publisher_subscribe">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">publisher_subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publisher_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#publisher_subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.publisher_subscribe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.publisher_unsubscribe">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">publisher_unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publisher_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#publisher_unsubscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.publisher_unsubscribe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.register_view">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">register_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#register_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.register_view" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="news_app.views.user_is_reader">
+<span class="sig-prename descclassname"><span class="pre">news_app.views.</span></span><span class="sig-name descname"><span class="pre">user_is_reader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news_app/views.html#user_is_reader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news_app.views.user_is_reader" title="Link to this definition">¶</a></dt>
+<dd><p>Role check.</p>
+</dd></dl>
+
+</section>
+<section id="module-news_app">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-news_app" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">News App Consolidation</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">news_app</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">news_app package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">news_app</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">news_app</a></li>
+      <li>Next: <a href="news_app.management.html" title="next chapter">news_app.management package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Alexander Myburgh.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/news_app.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

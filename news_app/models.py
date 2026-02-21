@@ -7,10 +7,11 @@ class CustomUser(AbstractUser):
     """
     Custom user model with role field.
 
-    - Role selects which Group user is placed into
-    (Readers/Editors/Journalists).
-    - Subscriptions only for Readers, Django ManyToMany fields can't be None.
-    Enforce "empty" vs "used".
+    - Role selects which Group the user is placed into:
+      Readers / Editors / Journalists.
+    - Subscriptions only for Readers. Django ManyToMany fields cannot be None,
+      so we enforce "empty" vs "used".
+
     """
 
     ROLE_READER = "reader"
