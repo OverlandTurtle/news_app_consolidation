@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Article (Editor){% endblock %}
+
+{% block content %}
+  <a href="{% url 'news_app:editor_articles' %}">&larr; Back to Manage Articles</a>
+
+  <h1 class="mt-3 mb-3">Edit Article</h1>
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    
+    <div class="mb-3">
+      <label class="form-label" for="{{ form.publisher.id_for_label }}">Publisher</label>
+      {{ form.publisher }}
+      {% if form.publisher.errors %}
+        <div class="text-danger small">{{ form.publisher.errors }}</div>
+      {% endif %}
+      <div class="form-text">Optional. Leave blank for independent.</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="{{ form.title.id_for_label }}">Title</label>
+      {{ form.title }}
+      {% if form.title.errors %}
+        <div class="text-danger small">{{ form.title.errors }}</div>
+      {% endif %}
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="{{ form.summary.id_for_label }}">Summary</label>
+      {{ form.summary }}
+      {% if form.summary.errors %}
+        <div class="text-danger small">{{ form.summary.errors }}</div>
+      {% endif %}
+      <div class="form-text">Optional. A short teaser for the article.</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="{{ form.body.id_for_label }}">Body</label>
+      {{ form.body }}
+      {% if form.body.errors %}
+        <div class="text-danger small">{{ form.body.errors }}</div>
+      {% endif %}
+    </div>
+
+    {% if form.non_field_errors %}
+      <div class="alert alert-danger">
+        {{ form.non_field_errors }}
+      </div>
+    {% endif %}
+
+    <button class="btn btn-primary" type="submit">Save changes</button>
+  </form>
+{% endblock %}

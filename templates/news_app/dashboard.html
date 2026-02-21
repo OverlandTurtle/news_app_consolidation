@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | News App{% endblock %}
+
+{% block content %}
+  <div class="p-4 bg-white rounded shadow-sm">
+    <h1 class="h4 mb-2">Dashboard</h1>
+
+    <p class="mb-1">
+      You are logged in as <strong>{{ request.user.username }}</strong>
+    </p>
+    <p class="mb-4">
+      Role: <strong>{{ request.user.get_role_display }}</strong>
+    </p>
+
+    <div class="mb-3">
+      {% if request.user.role == "reader" %}
+        <p class="text-muted mb-2">Your shortcuts:</p>
+
+        <a class="btn btn-outline-dark btn-sm me-2 mb-2" href="{% url 'news_app:article_list' %}">
+          Approved Articles
+        </a>
+        <a class="btn btn-outline-dark btn-sm me-2 mb-2" href="{% url 'news_app:publisher_list' %}">
+          Publishers
+        </a>
+        <a class="btn btn-outline-dark btn-sm mb-2" href="{% url 'news_app:journalist_list' %}">
+          Journalists
+        </a>
+
+      {% elif request.user.role == "journalist" %}
+        <p class="text-muted mb-2">Your shortcuts:</p>
+
+        <a class="btn btn-outline-dark btn-sm me-2 mb-2" href="{% url 'news_app:my_articles' %}">
+          My Articles
+        </a>
+        <a class="btn btn-outline-dark btn-sm mb-2" href="{% url 'news_app:article_create' %}">
+          Create Article
+        </a>
+
+      {% elif request.user.role == "editor" %}
+        <p class="text-muted mb-2">Your shortcuts:</p>
+
+        <a class="btn btn-outline-dark btn-sm mb-2" href="{% url 'news_app:editor_pending_articles' %}">
+          Pending Articles
+        </a>
+
+      {% else %}
+        <p class="text-muted mb-2">
+          No role actions available for this account.
+        </p>
+      {% endif %}
+    </div>
+
+    <a class="btn btn-outline-secondary btn-sm" href="{% url 'news_app:logout' %}">
+      Logout
+    </a>
+  </div>
+{% endblock %}

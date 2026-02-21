@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <div class="p-4 bg-light rounded">
+    <h1 class="mb-2">News App Capstone</h1>
+
+    <p class="text-muted mb-3">
+      A simple news platform for curious minds.
+    </p>
+
+    {% if user.is_authenticated %}
+      <p class="mb-3">
+        You’re logged in as <strong>{{ user.username }}</strong>
+        ({{ user.role|title }}).
+      </p>
+
+      <a class="btn btn-primary" href="{% url 'news_app:dashboard' %}">
+        Go to Dashboard
+      </a>
+
+      <a class="btn btn-outline-secondary ms-2" href="{% url 'news_app:article_list' %}">
+        Browse approved articles
+      </a>
+    {% else %}
+      <a class="btn btn-outline-secondary ms-2" href="{% url 'news_app:article_list' %}">
+        View approved articles
+      </a>
+
+    {% endif %}
+  </div>
+{% endblock %}

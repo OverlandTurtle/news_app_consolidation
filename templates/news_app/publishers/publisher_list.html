@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Publishers{% endblock %}
+
+{% block content %}
+  <h1 class="mb-3">Publishers</h1>
+
+  {% if user.is_authenticated and user.role == "editor" %}
+    <a class="btn btn-sm btn-primary mb-3" href="{% url 'news_app:publisher_create' %}">
+    + New Publisher
+    </a>
+  {% endif %}
+
+  {% if publishers %}
+    <div class="list-group">
+      {% for publisher in publishers %}
+        <div class="list-group-item d-flex justify-content-between align-items-start">
+          <div>
+            <h5 class="mb-1">{{ publisher.name }}</h5>
+
+            {% if publisher.website %}
+              <small>
+                <a href="{{ publisher.website }}" target="_blank" rel="noopener noreferrer">
+                  {{ publisher.website }}
+                </a>
+              </small>
+            {% else %}
+              <small class="text-muted">No website listed.</small>
+            {% endif %}
+          </div>
+
+          <div>
+            {% if user.is_authenticated and user.role == "reader" %}
+              {% if publisher in user.subscribed_publishers.all %}
+                <form method="post" action="{% url 'news_app:publisher_unsubscribe' publisher.id %}">
+                  {% csrf_token %}
+                  <button class="btn btn-sm btn-outline-danger" type="submit">Unsubscribe</button>
+                </form>
+              {% else %}
+                <form method="post" action="{% url 'news_app:publisher_subscribe' publisher.id %}">
+                  {% csrf_token %}
+                  <button class="btn btn-sm btn-outline-success" type="submit">Subscribe</button>
+                </form>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No publishers yet.</p>
+  {% endif %}
+{% endblock %}

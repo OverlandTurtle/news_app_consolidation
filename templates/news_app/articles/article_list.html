@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Articles{% endblock %}
+
+{% block content %}
+  <h1 class="mb-3">Articles</h1>
+
+  {% if articles %}
+    <div class="list-group">
+      {% for article in articles %}
+        <a class="list-group-item list-group-item-action"
+           href="{% url 'news_app:article_detail' article.id %}">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ article.title }}</h5>
+            <small>{{ article.created_at|date:"Y-m-d H:i" }}</small>
+          </div>
+
+          {% if article.summary %}
+            <p class="mb-1">{{ article.summary }}</p>
+          {% endif %}
+
+          <small>
+            Publisher: {{ article.publisher.name }} |
+            Journalist: {{ article.journalist.username }}
+          </small>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No approved articles yet.</p>
+  {% endif %}
+{% endblock %}

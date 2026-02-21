@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Pending Articles{% endblock %}
+
+{% block content %}
+  <h1 class="mb-3">Pending Articles</h1>
+
+  <p class="text-muted">
+    These articles are waiting for editor approval.
+  </p>
+
+  {% if pending_articles %}
+    <div class="list-group">
+      {% for article in pending_articles %}
+        <div class="list-group-item">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h5 class="mb-1">{{ article.title }}</h5>
+
+              <small class="text-muted">
+                Journalist: {{ article.journalist.username }}
+                |
+                Publisher:
+                {% if article.publisher %}
+                  {{ article.publisher.name }}
+                {% else %}
+                  None
+                {% endif %}
+                |
+                Created: {{ article.created_at|date:"Y-m-d H:i" }}
+              </small>
+
+              {% if article.summary %}
+                <p class="mt-2 mb-0">{{ article.summary }}</p>
+              {% endif %}
+            </div>
+
+            <div class="text-end">
+              <form method="post" action="{% url 'news_app:editor_approve_article' article.id %}">
+                {% csrf_token %}
+                <button class="btn btn-sm btn-success" type="submit"
+                        onclick="return confirm('Approve this article and publish it?');">
+                  Approve
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No pending articles right now.</p>
+  {% endif %}
+{% endblock %}

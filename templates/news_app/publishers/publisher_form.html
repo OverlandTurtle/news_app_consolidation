@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Create Publisher{% endblock %}
+
+{% block content %}
+  <div class="p-4 bg-white rounded shadow-sm">
+    <h1 class="h4 mb-3">Create Publisher</h1>
+
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      <div class="mb-3">
+        <label class="form-label" for="name">Publisher name</label>
+        <input
+          class="form-control"
+          id="name"
+          name="name"
+          type="text"
+          value="{{ form_data.name }}"
+          required
+        >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="website">Website (optional)</label>
+        <input
+          class="form-control"
+          id="website"
+          name="website"
+          type="url"
+          value="{{ form_data.website }}"
+          placeholder="https://example.com"
+        >
+        <div class="form-text">You can leave this blank if you want.</div>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Create publisher</button>
+      <a class="btn btn-outline-secondary ms-2" href="{% url 'news_app:publisher_list' %}">
+        Cancel
+      </a>
+    </form>
+  </div>
+{% endblock %}
